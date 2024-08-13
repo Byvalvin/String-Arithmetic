@@ -12,7 +12,11 @@ def build_regex(digit=False, letter=False, specific_string=None, min_length=0, m
     - max_length: Maximum length of the string to match.
     - start_with: String that the match must start with.
     - end_with: String that the match must end with.
-    - char_spec: A dictionary where keys are characters and values are tuples specifying constraints.
+    - char_spec: A dictionary where keys are characters and values are tuples specifying constraints:
+        - (x, orless, ormore) where:
+            - x: Exact number of occurrences.
+            - orless: Boolean indicating whether x or fewer occurrences are allowed.
+            - ormore: Boolean indicating whether x or more occurrences are allowed.
     - allowed_chars: A list of characters that are allowed in the match.
     - disallowed_chars: A list of characters that are disallowed in the match.
     - exact_one: Character that must appear exactly once. If None, no such requirement.
